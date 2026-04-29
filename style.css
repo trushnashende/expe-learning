@@ -1,0 +1,63 @@
+body {
+    background-color: lightblue;
+    font-family: Arial;
+    text-align: center;
+}
+
+.title {
+    color: darkblue;
+}
+
+.subtitle {
+    color: navy;
+    font-size: 18px;
+}
+
+.footer {
+    color: navy;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-spacing: 10px;
+}
+
+.flashcard {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Front */
+.front {
+    font-size: 40px;
+    font-weight: bold;
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Back */
+.back {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Hover flip */
+.flashcard:hover .front {
+    display: none;
+}
+
+.flashcard:hover .back {
+    display: flex;
+}
