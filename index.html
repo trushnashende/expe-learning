@@ -11,6 +11,13 @@
 <h1 class="title">ABC FLASHCARDS</h1>
 <p class="subtitle">A to Z Alphabets</p>
 
+<!-- SEARCH + RANDOM -->
+<input type="text" id="searchBox" placeholder="Enter Alphabet (A-Z)">
+<button onclick="searchAlphabet()">Search</button>
+<button onclick="randomCard()">Random</button>
+
+<h2 id="result"></h2>
+
 <div class="flashcard-container">
 
 <table>
@@ -62,6 +69,60 @@
 <p class="footer">A to Z Alphabets</p>
 
 </center>
+
+<script>
+// DATA (acts like API)
+const flashcards = [
+  {letter: "A", word: "Apple"},
+  {letter: "B", word: "Ball"},
+  {letter: "C", word: "Cat"},
+  {letter: "D", word: "Dog"},
+  {letter: "E", word: "Elephant"},
+  {letter: "F", word: "Frog"},
+  {letter: "G", word: "Grapes"},
+  {letter: "H", word: "Hat"},
+  {letter: "I", word: "Ice Cream"},
+  {letter: "J", word: "Juice"},
+  {letter: "K", word: "Kite"},
+  {letter: "L", word: "Lion"},
+  {letter: "M", word: "Monkey"},
+  {letter: "N", word: "Nest"},
+  {letter: "O", word: "Octopus"},
+  {letter: "P", word: "Penguin"},
+  {letter: "Q", word: "Queen"},
+  {letter: "R", word: "Rainbow"},
+  {letter: "S", word: "Sun"},
+  {letter: "T", word: "Turtle"},
+  {letter: "U", word: "Umbrella"},
+  {letter: "V", word: "Violin"},
+  {letter: "W", word: "Whale"},
+  {letter: "X", word: "Xylophone"},
+  {letter: "Y", word: "Yak"},
+  {letter: "Z", word: "Zebra"}
+];
+
+// SEARCH
+function searchAlphabet() {
+  let input = document.getElementById("searchBox").value.toUpperCase();
+
+  let result = flashcards.find(f => f.letter === input);
+
+  if (result) {
+    document.getElementById("result").innerHTML =
+      result.letter + " - " + result.word;
+  } else {
+    document.getElementById("result").innerHTML = "Not Found!";
+  }
+}
+
+// RANDOM
+function randomCard() {
+  let random = flashcards[Math.floor(Math.random() * flashcards.length)];
+
+  document.getElementById("result").innerHTML =
+    random.letter + " - " + random.word;
+}
+</script>
 
 </body>
 </html>
